@@ -1,31 +1,75 @@
+import random
+import string
 
 
-class Data:
-    def __init__(self, dia, mes, ano):
-        self.dia = dia
-        self.mes = mes
-        self.ano = ano
+print("==========gerador de senha==========")
+print("Tipos:\n"
+      "1) Letras minúsculas\n"
+      "2) Letras maiúsculas\n"
+      "3) Caracteres especiais\n"
+      "4) Dígitos\n"
+      "5) Todos os anteriores (recomendado)\n")
 
-    def exibir(self):
-        # Verifica se o dia é válido (1 a 31)
-        if self.dia < 1 or self.dia > 31:
-            print("Digite um valor para dia válido (1 a 31)") 
-        # Verifica se o mês é válido (1 a 12)
-        elif self.mes < 1 or self.mes > 12:
-            print("Digite um valor para mês válido (1 a 12)")
-        # Verifica se o ano é válido (deve ter 4 dígitos)
-        elif self.ano <= 0 or len(str(self.ano)) != 4:
-            print("Digite um valor para ano válido (4 dígitos)")
-        else:
-            print("A data inserida foi {}/{}/{}".format(self.dia, self.mes, self.ano))
 
-# Testando com diferentes valores
-data1 = Data(0, 10, 2020)
-data2 = Data(10, 0, 2020)
-data3 = Data(10, 10, 0)
-data4 = Data(10, 10, 2020)
+tipo_de_senha: int = int(input("Digite o tipo de senha escolhido: "))
+tamanho_da_senha: int = int(input("Digite o tamanho desejado para a senha: "))
 
-data1.exibir()  # Dia inválido
-data2.exibir()  # Mês inválido
-data3.exibir()  # Ano inválido
-data4.exibir()  # Data válida
+
+def gera_senha_minuscula() -> None:
+    caracteres_minusculos: str = string.ascii_lowercase
+    print("==============senha=============\n"
+          "Copie sua senha: " +
+          "".join(random.choice(caracteres_minusculos)
+                  for caractere in range(tamanho_da_senha)))
+
+
+def gera_senha_maiuscula() -> None:
+    caracteres_maiusculos: str = string.ascii_uppercase
+    print("==============senha=============\n"
+          "Copie sua senha: " +
+          "".join(random.choice(caracteres_maiusculos)
+                  for caractere in range(tamanho_da_senha)))
+
+
+def gera_senha_numerica() -> None:
+    caracteres_numericos: str = string.digits
+    print("==============senha=============\n"
+          "Copie sua senha: " +
+          "".join(random.choice(caracteres_numericos)
+                  for caractere in range(tamanho_da_senha)))
+
+
+def gera_senha_caracteres_especiais() -> None:
+    caracteres_especiais: str = "@#!&$#%*/ç.;:?¨()[]{}|,^~+-¨'_=°ªº"
+    print("==============senha=============\n"
+          "Copie sua senha: " +
+          "".join(random.choice(caracteres_especiais)
+                  for caractere in range(tamanho_da_senha)))
+
+
+def gera_senha_forte() -> None:
+    caracteres: str = string.ascii_letters + string.digits +\
+                 "@#!&$#%*/ç.;:?¨()[]{}|,^~+-¨'_=°ªº"
+    print("==============senha=============\n"
+          "Copie sua senha: " +
+          "".join(random.choice(caracteres)
+                  for caractere in range(tamanho_da_senha)))
+
+
+if tipo_de_senha == 1:
+    gera_senha_minuscula()
+
+elif tipo_de_senha == 2:
+    gera_senha_maiuscula()
+
+elif tipo_de_senha == 3:
+    gera_senha_caracteres_especiais()
+
+elif tipo_de_senha == 4:
+    gera_senha_numerica()
+
+elif tipo_de_senha == 5:
+    gera_senha_forte()
+
+else:
+    print("Tipo de senha inválido, tente novamente...")

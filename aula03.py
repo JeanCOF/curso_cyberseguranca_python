@@ -281,9 +281,56 @@ data4.exibir()  # Data válida
 #10. Classe  Quadrado 
    #- Crie uma classe Quadrado com um atributo lado. Adicione métodos para calcular a área e o perímetro do quadrado.
 
+class Quadrado:
+    def __init__(self,lado):
+        self.lado= lado
+
+    def calc_area_qua(self):
+        area= self.lado **2 
+        return print("A área é de {}".format(area))
+    
+    def calc_peri_qua(self):
+        peri= self.lado * 4 
+        return print("O perimetro é {}".format(peri))
+
+qua1= Quadrado(20)
+
+qua1.calc_area_qua()
+qua1.calc_peri_qua()
+
 #11. Classe Produto
    #- Crie uma classe de produtos com atributos como nome, preço, quantidade. Adicione um método que retorna o valor total de um produto (preço * quantidade).
 
+class Produto:
+    def __init__(self,produtos):
+        self.produtos = []
+    
+
+    def criar_prod(self,nome,preco,quant):
+        if any(produto['nome']== nome for produto in self.produtos):
+            print("O produto {} já existe".format(nome))
+        else:
+            novo_produto= {'nome':nome,'preco':preco,'quant':quant}
+
+            self.produtos.append(novo_produto)
+            print("Produto {} criado com sucesso".format(nome))
+
+    def exibir(self):
+        if not self.produtos:
+            print("Nenhum produto encontrado")
+            return
+        else:
+            print("porodutos registrados: ")
+            for produto in self.produtos:
+                print("Nome: {} Preço: {} Quantidade: {} Valor total: {}".format(produto['nome'],produto['preco'],produto['quant'],(int(produto['preco'])*int(produto['quant']))))
+        
+
+estoque=Produto(1)
+estoque.criar_prod("Camisa",29.99,10)
+estoque.criar_prod("Calça",79.99,20)
+estoque.criar_prod("Camisa",29.99,50)
+
+estoque.exibir()
 
 #12. Classe PessoaJuridica
    #- Crie uma classe Pessoa Jurídica com atributos  de razão social ,  CNPJ ,  telefone . Adicione métodos para validar o CNPJ e exibir as informações da empresa.
