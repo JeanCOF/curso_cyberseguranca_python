@@ -66,7 +66,7 @@ Iteração com tuplas
 elemento.
 12. Use iter em uma tupla vazia () e mostre o que acontece ao tentar usar next."""
 #1
-
+print("EX 1--------------------------")
 seq= [1,2,3,4,5]
 
 myit= iter(seq)
@@ -74,7 +74,7 @@ myit= iter(seq)
 print(next(myit))
 
 #2
-
+print("EX 2--------------------------")
 class Mynumbers:
     def __init__(self):
         self.a = 0
@@ -98,7 +98,7 @@ for x in myiter:
     print(x)
 
 #3
-
+print("EX 3--------------------------")
 frutas = ['maçã', 'banana', 'laranja']
 
 
@@ -110,7 +110,7 @@ segundo_item = next(myit)
 print(segundo_item)
 
 #4
-
+print("EX 4--------------------------")
 mystr= "Python"
 
 myit= iter(mystr)
@@ -118,7 +118,7 @@ myit= iter(mystr)
 print(next(myit))
 
 #5
-
+print("EX 5--------------------------")
 mystr= "ABCD"
 
 myit= iter(mystr)
@@ -129,7 +129,7 @@ print(next(myit))
 print(next(myit))
 
 #6
-
+print("EX 6--------------------------")
 mystr= "exemplo"
 
 myit= iter(mystr)
@@ -143,7 +143,7 @@ while myit:
         break
 
 #7
-
+print("EX 7--------------------------")
 dicionario = {'a': 1, 'b': 2, 'c': 3}
 
 
@@ -154,7 +154,7 @@ print(next(iterador))
 print(next(iterador)) 
 
 #8
-
+print("EX 8--------------------------")
 dicionario = {'a': 1, 'b': 2, 'c': 3}
 
 iterador = iter(dicionario)
@@ -164,7 +164,7 @@ print(dicionario[next(iterador)])
 print(dicionario[next(iterador)])  
 
 #9
-
+print("EX 9--------------------------")
 dicionario = {'a': 1, 'b': 2, 'c': 3}
 
 iterador = iter(dicionario.items())
@@ -178,7 +178,7 @@ while True:
         break
 
 #10
-
+print("EX 10--------------------------")
 tupla = (1, 2, 3)
 
 
@@ -189,7 +189,7 @@ for elemento in iterador:
     print(elemento)
 
 #11
-
+print("EX 11--------------------------")
 
 tupla = ('a', 'b', 'c')
 
@@ -201,6 +201,7 @@ terceiro_elemento = next(iterador)
 print(terceiro_elemento)
 
 #12
+print("EX 12--------------------------")
 tupla_vazia = ()
 
 iterador = iter(tupla_vazia)
