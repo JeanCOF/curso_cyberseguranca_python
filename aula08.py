@@ -31,14 +31,14 @@ print(data.day)
 #9. Imprima a hora atual.
 print(data.hour)
 #10. Imprima os minutos atuais.
-print(data.min)
+print(data.minute)
 #11. Imprima os segundos atuais.
 print(data.second)
 #12. Crie uma data personalizada (ano, mês, dia) usando datetime.datetime.
 data = datetime.datetime(2010, 10, 10)
 print(data)
 #13. Crie uma data e hora personalizada (ano, mês, dia, hora, minuto, segundo).
-data = datetime.datetime.now(2010,10,10,23,59,59)
+data = datetime.datetime(2010,10,10,23,59,59)
 print(data)
 #14. Converta uma data para o formato de string (ex: "YYYY-MM-DD").
 data = datetime.datetime.now()

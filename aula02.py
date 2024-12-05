@@ -1,36 +1,4 @@
-class Carro:
-    def __init__(self, marca, modelo, ano):
-        self.marca = marca
-        self.modelo = modelo
-        self.ano = ano
-        self.velocidade = 0 
 
-    def mostra_informacoes(self):
-        print("Carro: {} {} {} - Velocidade: {}Km/h".format(self.marca, self.modelo, self.ano, self.velocidade))
-
-    def acelerar(self, i):
-        self.velocidade += i 
-        print("Você acelerou. A velocidade atual é {}Km/h".format(self.velocidade))
-
-    def frear(self):
-        if self.velocidade > 0:
-            self.velocidade -= 10
-            print("Você freou. A velocidade atual é {}Km/h".format(self.velocidade))
-        else:
-            print("O carro já está parado")
-
-# Criando objetos da classe Carro
-carro1 = Carro("Volkswagen", "Gol", 2020)
-carro2 = Carro("Citroën", "C4", 2015)
-
-# Interagindo com os objetos
-carro1.mostra_informacoes()
-carro1.acelerar(90)
-carro1.frear()
-
-carro2.mostra_informacoes()
-carro2.acelerar(50)
-carro2.frear()
 
 
 #EX1
